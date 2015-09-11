@@ -35,8 +35,7 @@ angular.module('invoice2', ['finance2','myModule'])
   this.currencies = c.currencies;
 
   this.total = function total(outCurr) {
-	this.currencies = ['INR'];
-    return c.convert(this.qty * this.cost, this.inCurr, outCurr);
+	  return c.convert(this.qty * this.cost, this.inCurr, outCurr);
   };
   this.pay = function pay() {
     window.alert("Thanks! " + o.message);

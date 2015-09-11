@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Example - example-guide-concepts-1-production</title>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.js"></script>
 </head>
-<body >
-<div ng-app="invoice1" ng-controller="InvoiceController as invoice">
+<body ng-app="invoice1" >
+<div  ng-controller="InvoiceController as invoice" ng-init="qty=99">
   <b>Invoice:</b>
   <div>
     Quantity: <input type="number" min="0" ng-model="qty" required >
@@ -32,11 +32,12 @@ angular.module('invoice1', [])
   $scope.qty = 1;
   this.cost = 2;
   this.inCurr = 'EUR';
-  this.currencies = ['USD', 'EUR', 'CNY'];
+  this.currencies = ['USD', 'EUR', 'CNY', 'INR'];
   this.usdToForeignRates = {
     USD: 1,
     EUR: 0.74,
-    CNY: 6.09
+    CNY: 6.09,
+    INR : 63
   };
 
   this.total = function total(outCurr) {

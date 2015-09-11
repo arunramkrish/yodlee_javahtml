@@ -12,17 +12,21 @@
   </style>
 </head>
 <body ng-app='drag'>
-	<div ng-controller="dragControl1">
-	<span draggable>Drag ME</span>
+	<div>
+  <div ng-repeat="a in [1,2,3]">
+	 <span draggable>Drag ME {{a}}</span>
+</div>
 	</div>
-	<div ng-controller="dragControl2">
+	<div>
   <span draggable>Drag ME Too</span>
 	</div>
 </body>
 <script>
 angular.module('drag', []).
 directive('draggable', function($document) {
+  alert("init directive");
   return function(scope, element, attr) {
+    alert("create directive");
     var startX = 0, startY = 0, x = 0, y = 0;
     element.css({
      position: 'relative',
